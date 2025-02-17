@@ -1,0 +1,161 @@
+body {
+    background-color: #121212;
+    /* Fondo oscuro */
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.container-tv {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 400px;
+    background: #181818;
+    padding: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+}
+
+.channel-list {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.channel-card {
+    display: flex;
+    align-items: center;
+    background: #212121;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    border: 1px solid #444;
+}
+
+.channel-card:hover,
+.channel-card:focus {
+    background: #383838;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+    /* Efecto neón */
+}
+
+.channel-card img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: none;
+}
+
+.video-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.plyr__video-embed {
+    width: 90%;
+    max-width: 1200px;
+    border: 2px solid #9b4dca;
+    /* Borde morado */
+    border-radius: 10px;
+}
+
+.toggle-sidebar-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    background: #9b4dca;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+}
+
+.toggle-sidebar-btn:hover {
+    background: #8a3dbf;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+}
+
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #212121;
+    padding: 5px;
+    border: 1px solid #333;
+    display: none;
+    z-index: 1;
+}
+
+.suggestions li {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.suggestions li:hover {
+    background-color: #383838;
+}
+
+.channel-name-header {
+    color: #9b4dca;
+    /* Texto morado neón */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+    /* Efecto de texto neón */
+}
+
+.category-item {
+    cursor: pointer;
+    background: #333;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.category-item:hover {
+    background: #9b4dca;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+    /* Efecto neón */
+}

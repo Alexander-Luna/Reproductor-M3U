@@ -1,0 +1,64 @@
+body {
+    background-color: #18191A;
+    /* Fondo oscuro */
+    color: #fff;
+    /* Texto blanco */
+}
+
+.login-card {
+    background-color: #212529;
+    /* Gris oscuro */
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(104, 58, 183, 0.7);
+    /* Sombra morada */
+    transition: all 0.3s ease-in-out;
+}
+
+.login-card:hover {
+    box-shadow: 0 0 25px rgba(104, 58, 183, 0.9);
+}
+
+.login-card h1 {
+    margin-bottom: 1.5rem;
+    color: #673AB7;
+    /* Color morado */
+    text-shadow: 0 0 10px rgba(104, 58, 183, 0.8);
+}
+
+.form-control {
+    background-color: #212529;
+    /* Gris oscuro */
+    border-color: #673AB7;
+    /* Borde morado */
+    color: #fff;
+    /* Texto blanco */
+}
+
+.form-control:focus {
+    border-color: #673AB7;
+    box-shadow: 0 0 0 0.25rem rgba(104, 58, 183, 0.5);
+}
+
+.btn-primary {
+    background-color: #673AB7;
+    border-color: #673AB7;
+    box-shadow: 0 0 10px rgba(104, 58, 183, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #512D6D;
+    border-color: #512D6D;
+    box-shadow: 0 0 15px rgba(104, 58, 183, 0.8);
+}
+
+.invalid-feedback {
+    color: #ff4d4d;
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        padding: 1.5rem;
+    }
+}
