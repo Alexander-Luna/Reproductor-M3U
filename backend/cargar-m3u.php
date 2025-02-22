@@ -28,8 +28,10 @@ function parseM3U($filePath, $type)
                 'live' => in_array('live', $pathParts)
                     || pathinfo($line, PATHINFO_EXTENSION) === 'ts'
                     || pathinfo($line, PATHINFO_EXTENSION) === 'm3u8',
-                'series' => in_array('series', $pathParts),
-                'movie'  => in_array('movie', $pathParts),
+                'series' => in_array('series', $pathParts)|| pathinfo($line, PATHINFO_EXTENSION) === 'mp4'
+                || pathinfo($line, PATHINFO_EXTENSION) === 'mkv' || pathinfo($line, PATHINFO_EXTENSION) === 'avi',
+                'movie'  => in_array('movie', $pathParts) || pathinfo($line, PATHINFO_EXTENSION) === 'mp4'
+                    || pathinfo($line, PATHINFO_EXTENSION) === 'mkv' || pathinfo($line, PATHINFO_EXTENSION) === 'avi',
                 default  => false
             }) {
                 // Agrupa el canal según el group-title

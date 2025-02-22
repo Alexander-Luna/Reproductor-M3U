@@ -91,15 +91,10 @@ if (file_exists($filePath)) {
                             </div>
 
                         <?php endforeach; ?>
-
                     </div>
-
                 <?php endforeach; ?>
-
             </ul>
-
         </div>
-
     </div>
 
     <script>
@@ -133,20 +128,7 @@ if (file_exists($filePath)) {
             channelNameHeader.textContent = message;
         }
 
-        // Función para reproducir el canal
-        function playChannel(url) {
-            const video = document.getElementById('player');
-
-            if (Hls.isSupported()) {
-                let hls = new Hls();
-                hls.loadSource(url);
-                hls.attachMedia(video);
-                video.play();
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = url;
-                video.play();
-            }
-        }
+    
 
         // Actualizar el nombre del canal en la cabecera
         function updateChannelName(name) {
@@ -255,6 +237,20 @@ if (file_exists($filePath)) {
             sidebar.classList.toggle('show');
 
         });
+            // Función para reproducir el canal
+            function playChannel(url) {
+            const video = document.getElementById('player');
+
+            if (Hls.isSupported()) {
+                let hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                video.play();
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+                video.play();
+            }
+        }
     </script>
 
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
